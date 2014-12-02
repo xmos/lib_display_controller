@@ -1,0 +1,2 @@
+make the buffer threads lockless
+do dependency resolution within the display controller to increase bandwidth

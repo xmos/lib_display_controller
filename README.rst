@@ -35,7 +35,6 @@ intended to be used with version 13.x of the xTIMEcomposer studio tools.
 The library depends on::
   * lib_sdram,
   * lib_lcd,
-  * lib_memory_address_allocator.
 
 Related application notes
 .........................

@@ -29,12 +29,7 @@ TODO
 Software version and dependencies
 .................................
 
-This document pertains to version |version| of the display controller library. It is
-intended to be used with version 13.x of the xTIMEcomposer studio tools.
-
-The library depends on::
-  * lib_sdram,
-  * lib_lcd,
+.. libdeps::
 
 Related application notes
 .........................

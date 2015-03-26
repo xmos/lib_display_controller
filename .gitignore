@@ -8,6 +8,7 @@
 *.i
 *.a
 **/_build/*
+**/.build/*
 lib_lcd/doc/rst/_build/*
 **/run_*.log
 **/pdf/*
@@ -15,3 +16,6 @@ lib_lcd/doc/rst/_build/*
 Installs/*
 .settings*
 examples/lcd_demo/.build*/*
+**/.cproject
+**/.project
+**/.xproject

@@ -1,0 +1,4 @@
+{
+  "project.name" : "lib_display_controller",
+  "phabricator.uri" : "http://phabricator.xmos.local:9000/"
+}

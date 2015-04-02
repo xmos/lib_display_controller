@@ -6,7 +6,7 @@ Hardware characteristics
 The display controller requires use of an SDRAM and and LCD. The respective hardware requirements of these are covered in:
 
   - :ref:`SDRAM library <programming_guide>`,
-  - :ref:`LCD library <programming_guide>`,
+  - :ref:`LCD library <programming_guide>`.
 
 
 Display Controller API

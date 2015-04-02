@@ -52,9 +52,6 @@ Resource Usage
 Software version and dependencies
 .................................
 
-This document pertains to version |version| of the display controller library. It is
-intended to be used with version 13.x of the xTIMEcomposer studio tools.
-
 .. libdeps::
 
 Related application notes

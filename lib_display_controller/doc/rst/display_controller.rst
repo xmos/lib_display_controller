@@ -3,7 +3,7 @@
 Hardware characteristics
 ------------------------
 
-The display controller requires use of an SDRAM and and LCD. The respective hardware requirements of these are covered in:
+The display controller requires use of an SDRAM and an LCD. The respective hardware requirements of these are covered in:
 
   - :ref:`SDRAM library <programming_guide>`,
   - :ref:`LCD library <programming_guide>`.
@@ -23,17 +23,22 @@ The display controller server and client are instantiated as parallel tasks that
 ``par`` statement. The client (application on most cases) can connect via
 a streaming channel.
 
-The display controller uses distributed tasks to implement bi-directional asynchronous decoupling of the commands between the application(client) and the display controller. This means that
-the asynchronous command buffering is handled by the interfaces::
+The display controller uses distributed tasks to implement bi-directional asynchronous 
+decoupling of the commands between the application(client) and the display controller. 
+This means that the asynchronous command buffering is handled by the interfaces::
 
   interface app_to_cmd_buffer_i
   interface cmd_buffer_to_dc_i
   interface dc_to_res_buf_i
   interface res_buf_to_app_i
 
-There is one other interface that connects to the application, this is the vertical synchronization interface. The purpose of this interface is to allow the application to know when the frame is at the start of a new scan, i.e. line zero is about to be written.
+There is one other interface that connects to the application, the vertical 
+synchronization interface. This interface allows the application to know when 
+the frame is at the start of a new scan, i.e. line zero is about to be written.
 
-As the display controller uses some of the SDRAM the memory address allocator is used to allocate an amount of the SDRAM to the display controller. See ... TODO to find out more about how to use the memory address allocator.
+As the display controller uses some of the SDRAM, the memory address allocator 
+is used to allocate an amount of the SDRAM to the display controller. See (... TODO) 
+to find out more about how to use the memory address allocator.
 
 For example, the following code instantiates a display controller server
 and connects an application to it (the SDRAM and LCD declarations has been shortened for simplicity)::
@@ -94,11 +99,11 @@ from one task to another.
 
 The display controller library uses movable pointers to pass buffers between
 the client and the server. This means that when the client passes a buffer to
-the display controller then whilst the server is processing the command the
-client will be unable to access that buffer. To handle this that client sends
+the display controller the client cannot access that buffer while the server 
+is processing the command . To handle this the client sends
 commands using ``display_controller_read`` and ``display_controller_write``,
-both of which will take a movable pointer as an argument. To return the pointer
-to the client the client must call the interface from the display controller
+both of which take a movable pointer as an argument. To return the pointer
+to the client, the client must call the interface from the display controller
 (res_buf_to_app_i) using the ``pop()`` method which will take back ownership
 of the pointer when the display controller server is finished processing the command.
 
@@ -125,7 +130,7 @@ calls to ``display_controller_read`` or ``display_controller_write``. A successf
 call to ``display_controller_read`` or ``display_controller_write`` will return 0 
 and issue the command to the command buffer. When the command buffer is full then 
 a call to ``sdram_read`` or ``sdram_write`` will return 1 and not issue the command.  
-Commands are completed, i.e. a slot is freed, when ``sdram_complete`` returns. 
+Commands are completed (i.e. a slot is freed) when ``sdram_complete`` returns. 
 Commands are processed as in a first in first out ordering.
 
 Initialization
@@ -138,7 +143,8 @@ should then begin by writing to any other registered frames (image handle 1 and 
 Safety through the use of movable pointers
 ..........................................
 
-The API makes use of movable pointer to aid correct multi-threaded memory handling. See [#]_ to know more about movable pointers.
+The API makes use of movable pointers to aid correct multi-threaded memory handling. 
+See [#]_ to know more about movable pointers.
 
 API
 ---

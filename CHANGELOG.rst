@@ -1,15 +1,6 @@
 Display controller library change log
 =====================================
 
-3.1.0
------
-
-  * Changes to dependencies:
-
-    - lib_sdram: 3.0.0 -> 3.0.1
-
-      + Added support for xCORE-200 series.
-
 3.0.0
 -----
 

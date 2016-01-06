@@ -11,6 +11,6 @@
 
 MODULE_XCC_XC_FLAGS = $(XCC_XC_FLAGS)
 
-VERSION = 3.0.0
+VERSION = 3.0.1
 
 DEPENDENT_MODULES = lib_sdram(>=3.0.0) lib_lcd(>=3.0.0)

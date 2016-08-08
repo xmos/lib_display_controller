@@ -1,4 +1,4 @@
-// Copyright (c) 2016, XMOS Ltd, All rights reserved
+// Copyright (c) 2015-2016, XMOS Ltd, All rights reserved
 /*******************************************************************************************
  * This program tests the initialization of the LCD display by the display controller server
 ********************************************************************************************/

@@ -117,7 +117,7 @@ void display_controller_write(
  * \param image_no       The image number to be commited to the display.
  */
 void display_controller_frame_buffer_commit(
-        client interface app_to_cmd_buffer_i from_dc,
+        client interface app_to_cmd_buffer_i from_app,
         unsigned image_no);
 
 /** The display controller server task
@@ -130,8 +130,8 @@ void display_controller_frame_buffer_commit(
  * \param width          The height of each of the frame buffers(they are all be the same)
  * \param bytes_per_pixel  The bytes per pixel
  * \param mem_alloc           The interface to the memory address allocator
- * \param c_sdram_lcd,        The streaming channel to the SDRAM server (high priority)
- * \param c_sdram_client,     The streaming channel to the SDRAM server (low priority)
+ * \param c_sdram_lcd         The streaming channel to the SDRAM server (high priority)
+ * \param c_sdram_client      The streaming channel to the SDRAM server (low priority)
  * \param c_lcd               The streaming channel to the LCD server
  */
 void display_controller(

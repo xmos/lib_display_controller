@@ -53,12 +53,12 @@ void display_controller_write(
 
 #pragma unsafe arrays
 void display_controller_frame_buffer_commit(
-        client interface app_to_cmd_buffer_i from_dc,
+        client interface app_to_cmd_buffer_i from_app,
         unsigned image_no) {
     s_command c;
     c.type = CMD_SET_FRAME;
     c.image_no = image_no;
-    from_dc.push(c, null);
+    from_app.push(c, null);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
